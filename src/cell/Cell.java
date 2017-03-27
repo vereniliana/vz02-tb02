@@ -27,21 +27,21 @@ public class Cell {
    * Mengembalikan karakter id untuk di render
    * @return karakter current cell
    */
-  public char GetId() {
+  public char getId() {
   	return id;
   }
   /**
    * Mengembalikan karakter id dari current cell
    * @return karakter current cell
    */
-  public char Render() {
-    return GetId();
+  public char render() {
+    return getId();
   }
   /**
    * Mengembalikan warna dari hewan
    * @return warna cetak hewan
    */
-  public String RenderWithColor() {
-    return Color.ANSI_WHITE + Render() + Color.ANSI_RESET;
+  public String renderWithColor() {
+    return Color.ANSI_WHITE + render() + Color.ANSI_RESET;
   }
 }

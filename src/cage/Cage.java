@@ -11,7 +11,7 @@ import color.*;
 public class Cage {
   private int size; // size of cage
   private int used; // space used in cage
-  private int n_animal; // total animals in cage
+  private int nAnimal; // total animals in cage
   private int[] row; // row position cell
   private int[] col; // column position of cell
   private Animal[] animal;
@@ -23,7 +23,7 @@ public class Cage {
   public Cage(){
     size = 10;
     used = 0;
-    n_animal = 0;
+    nAnimal = 0;
     row = new int[size];
     col = new int[size];
     animal = new Animal[size];
@@ -37,7 +37,7 @@ public class Cage {
   public Cage(int s){
     size = s;
     used = 0;
-    n_animal = 0;
+    nAnimal = 0;
     row = new int[size];
     col = new int[size];
     animal = new Animal[size];
@@ -48,7 +48,7 @@ public class Cage {
 	 * Mengembalikan ukuran kandang
 	 * @return ukuran kandang
 	 */
-  public int GetSize() {
+  public int getSize() {
     return size;
   }
 
@@ -56,15 +56,15 @@ public class Cage {
 	 * Mengembalikan jumlah binatang yang ada pada kandang
 	 * @return jumlah binatang
 	 */
-  public int GetTotalAnimal() {
-    return n_animal;
+  public int getTotalAnimal() {
+    return nAnimal;
   }
 
 	/**
 	 * Mengembalikan posisi (baris) sel kandang ke-i
 	 * @return posisi(baris) sel kandang ke-i
 	 */
-  public int GetRow(int i) {
+  public int getRow(int i) {
     return row[i];
   }
 
@@ -72,7 +72,7 @@ public class Cage {
 	 * Mengembalikan posisi (kolom) sel kandang ke-i
 	 * @return posisi(kolom) sel kandang ke-i
 	 */
-  public int GetCol(int i) {
+  public int getCol(int i) {
     return col[i];
   }
 
@@ -80,7 +80,7 @@ public class Cage {
 	 * Mengembalikan binatang pada sel kandang ke-i
 	 * @return binatang pada sel kandang ke-i
 	 */
-  public Animal GetAnimal(int i) {
+  public Animal getAnimal(int i) {
     return animal[i];
   }
 
@@ -88,7 +88,7 @@ public class Cage {
 	 * Mengembalikan jenis habitat dari kandang ('l'/'w'/'a')
 	 * @return jenis habitat dari kandang ('l'/'w'/'a')
 	 */
-  public char GetHabitat() {
+  public char getHabitat() {
     return habitat;
   }
 
@@ -96,7 +96,7 @@ public class Cage {
 	 * Mengatur jenis habitat dari kandang ('l'/'w'/'a')
 	 * @param _habitat dari kandang ('l'/'w'/'a')
 	 */
-  public void SetHabitat(char _habitat) {
+  public void setHabitat(char _habitat) {
     habitat = _habitat;
   }
 
@@ -107,7 +107,7 @@ public class Cage {
   // only use this if you want to recreate the cage i.e. input cage
   // WARNING all existing cage data will be lost
   // f.s. cage is empty with new size s
-  public void SetNewCage(int s) {
+  public void setNewCage(int s) {
     size = s;
     used = 0;
     row = new int[size];
@@ -119,20 +119,20 @@ public class Cage {
 	 * Memeriksa apakah kandang penuh/tidak
 	 * @return true jika penuh, false jika tidak penuh
 	 */
-  public boolean IsFull() {
-    return (double)n_animal >= (double)size*0.3;
+  public boolean isFull() {
+    return (double)nAnimal >= (double)size*0.3;
   }
 
 	/**
 	 * Memeriksa apakah terdapat hewan liar di kandang
 	 * @return true jika ada hewan liar, false jika tidak ada
 	 */
-  public boolean IsWild() {
+  public boolean isWild() {
     int i = 0;
     boolean found = false;
 
-    while ((i<n_animal) && (!found)){
-      if (animal[i].IsWild())
+    while ((i<nAnimal) && (!found)){
+      if (animal[i].isWild())
         found = true;
       else
         i++;
@@ -145,7 +145,7 @@ public class Cage {
 	 * Memeriksa apakah terdapat posisi (r,c) pada kandang
 	 * @return true jika ada posisi (r,c) pada kandang, false jika tidak
 	 */
-  public boolean SearchPosition(int r, int c) {
+  public boolean searchPosition(int r, int c) {
     int i = 0;
     boolean found = false;
 
@@ -163,12 +163,12 @@ public class Cage {
 	 * Memeriksa apakah ada binatang pada sel (r,c)
 	 * @return true jika ada binatang, false jika tidak ada
 	 */
-  public boolean SearchAnimal(int r, int c) {
+  public boolean searchAnimal(int r, int c) {
     int i = 0;
     boolean found = false;
 
-    while ((i<n_animal) && (!found)){
-      if ((animal[i].GetRow() == r) && (animal[i].GetCol() == c))
+    while ((i<nAnimal) && (!found)){
+      if ((animal[i].getRow() == r) && (animal[i].getCol() == c))
         found = true;
       else
         i++;
@@ -181,12 +181,12 @@ public class Cage {
    * Memeriksa apakah ada binatang dengan species _species
    * @return true jika ada binatang dengan species _species, false jika tidak ada
    */
-  public boolean SearchAnimal(Species _species) {
+  public boolean searchAnimal(Species _species) {
     int i = 0;
     boolean found = false;
 
-    while ((i<n_animal) && (!found)){
-      if (animal[i].GetSpecies() == _species)
+    while ((i<nAnimal) && (!found)){
+      if (animal[i].getSpecies() == _species)
         found = true;
       else
         i++;
@@ -200,7 +200,7 @@ public class Cage {
 	 * @param r koordinat baris
 	 * @param c koordinat kolom
 	 */
-  public void AddPosition(int r, int c) {
+  public void addPosition(int r, int c) {
     if (used <= size){
       row[used] = r;
       col[used] = c;
@@ -212,19 +212,19 @@ public class Cage {
 	 * Menambahkan binatang pada kandang
 	 * @param in binatang yang ingin dimasukkan ke kandang
 	 */
-  public void AddAnimal(Animal in) {
-    if (!IsFull() && ((in.GetFirstHabitat() == GetHabitat()) || (in.GetSecondHabitat() == GetHabitat()))){
+  public void addAnimal(Animal in) {
+    if (!isFull() && ((in.GetFirstHabitat() == getHabitat()) || (in.GetSecondHabitat() == getHabitat()))){
       boolean valid = false;
 
-      if (!SearchAnimal(in.GetRow(), in.GetCol())){ // if there is no other animal in the target coordinate
-        if (IsWild()){
-          if (in.IsWild())
-            valid = !SearchAnimal(in.GetSpecies()); // wild animal only live with the same species
+      if (!searchAnimal(in.getRow(), in.getCol())){ // if there is no other animal in the target coordinate
+        if (isWild()){
+          if (in.isWild())
+            valid = !searchAnimal(in.getSpecies()); // wild animal only live with the same species
           else
             valid = false;
         }else{
-          if (in.IsWild()){
-            valid = n_animal == 0; // wild animal cannot live with unwild animal unless there's no other animal
+          if (in.isWild()){
+            valid = nAnimal == 0; // wild animal cannot live with unwild animal unless there's no other animal
           }
           else{
             valid = true;
@@ -233,8 +233,8 @@ public class Cage {
       }
 
       if (valid){
-        animal[n_animal] = in.Clone();
-        ++n_animal;
+        animal[nAnimal] = in.clone();
+        ++nAnimal;
       }
     }
   }
@@ -243,7 +243,7 @@ public class Cage {
 	 * Mengembalikan jenis habitat kandang (format lower case) untuk ditampilkan pada layar
 	 * @return karakter jenis habitat kandang
 	 */
-  public char Render() {
+  public char render() {
     return Character.toLowerCase(habitat);
   }
 
@@ -251,30 +251,30 @@ public class Cage {
 	 * Mengembalikan jenis habitat kandang (format lower case) dengan kode warna untuk ditampilkan pada layar
 	 * @return kode warna beserta kode habutat
 	 */
-  public String RenderWithColor() {
-    return Color.ANSI_WHITE + Render() + Color.ANSI_RESET;
+  public String renderWithColor() {
+    return Color.ANSI_WHITE + render() + Color.ANSI_RESET;
   }
 
 	/**
 	 * Menampilkan data kandang pada layar
 	 */
-  public void Print(){
+  public void print(){
     System.out.println("Total size: " + size);
     for(int i=0; i<used; i++){
       System.out.println(row[i] + " " + col[i]);
     }
-    for(int i=0; i<n_animal; i++){
-      animal[i].DisplayAnimalData();
+    for(int i=0; i<nAnimal; i++){
+      animal[i].displayAnimalData();
     }
   }
 
 	/**
 	 * Menampilkan seluruh interaksi binatang yang terdapat pada kandang
 	 */
-  public void Interact(){
+  public void interact(){
     int i = 0;
-    while (i < n_animal){
-      animal[i].Interact();
+    while (i < nAnimal){
+      animal[i].interact();
       i++;
     }
   }
@@ -282,31 +282,31 @@ public class Cage {
 	/**
 	 * Mengubah posisi binatang-binatang pada kandang
 	 */
-  public void MoveAnimal(){
+  public void moveAnimal(){
     int i = 0;
 
-    while (i<n_animal){
+    while (i<nAnimal){
       Random rand = new Random();
       int rd = rand.nextInt(4) + 1;
       switch (rd){ // 1-up, 2-right, 3-down, 4-left
         case 1:
-        if (SearchPosition(animal[i].GetRow()-1, animal[i].GetCol()) && !SearchAnimal(animal[i].GetRow()-1, animal[i].GetCol()))
-          animal[i].SetRow(animal[i].GetRow()-1);
+        if (searchPosition(animal[i].getRow()-1, animal[i].getCol()) && !searchAnimal(animal[i].getRow()-1, animal[i].getCol()))
+          animal[i].setRow(animal[i].getRow()-1);
         break;
 
         case 2:
-        if (SearchPosition(animal[i].GetRow(), animal[i].GetCol()+1) && !SearchAnimal(animal[i].GetRow(), animal[i].GetCol()+1))
-          animal[i].SetCol(animal[i].GetCol()+1);
+        if (searchPosition(animal[i].getRow(), animal[i].getCol()+1) && !searchAnimal(animal[i].getRow(), animal[i].getCol()+1))
+          animal[i].setCol(animal[i].getCol()+1);
         break;
 
         case 3:
-        if (SearchPosition(animal[i].GetRow()+1, animal[i].GetCol()) && !SearchAnimal(animal[i].GetRow()+1, animal[i].GetCol()))
-          animal[i].SetRow(animal[i].GetRow()+1);
+        if (searchPosition(animal[i].getRow()+1, animal[i].getCol()) && !searchAnimal(animal[i].getRow()+1, animal[i].getCol()))
+          animal[i].setRow(animal[i].getRow()+1);
         break;
 
         case 4:
-        if (SearchPosition(animal[i].GetRow(), animal[i].GetCol()-1) && !SearchAnimal(animal[i].GetRow(), animal[i].GetCol()-1))
-          animal[i].SetCol(animal[i].GetCol()-1);
+        if (searchPosition(animal[i].getRow(), animal[i].getCol()-1) && !searchAnimal(animal[i].getRow(), animal[i].getCol()-1))
+          animal[i].setCol(animal[i].getCol()-1);
         break;
       }
 
@@ -318,10 +318,10 @@ public class Cage {
 	 * Mengembalikan jumlah total daging yang dikonsumsi seluruh binatang pada kandang
 	 * @return jumlah daging
 	 */
-  public double CountConsumedMeat(){
+  public double countConsumedMeat(){
     double sum = 0;
-    for(int i=0; i<n_animal; i++){
-      sum += animal[i].CountConsumedMeat();
+    for(int i=0; i<nAnimal; i++){
+      sum += animal[i].countConsumedMeat();
     }
     return sum;
   }
@@ -330,10 +330,10 @@ public class Cage {
 	 * Mengembalikan jumlah total sayur yang dikonsumsi seluruh binatang pada kandang
 	 * @return jumlah daging
 	 */
-  public double CountConsumedVeggie(){
+  public double countConsumedVeggie(){
     double sum = 0;
-    for(int i=0; i<n_animal; i++){
-      sum += animal[i].CountConsumedVeggie();
+    for(int i=0; i<nAnimal; i++){
+      sum += animal[i].countConsumedVeggie();
     }
     return sum;
   }
@@ -342,16 +342,16 @@ public class Cage {
 	 * Menduplikasi suatu kandang
 	 * @param kandang yang ingin diduplikasi
 	 */
-  public Cage Clone(){
+  public Cage clone(){
     Cage out = new Cage(size);
 
-    out.SetHabitat(habitat);
+    out.setHabitat(habitat);
 
-    for(int i=0; i<out.GetSize(); i++){
-      out.AddPosition(row[i], col[i]);
+    for(int i=0; i<out.getSize(); i++){
+      out.addPosition(row[i], col[i]);
     }
-    for(int i=0; i<GetTotalAnimal(); i++){
-      out.AddAnimal(animal[i]);
+    for(int i=0; i<getTotalAnimal(); i++){
+      out.addAnimal(animal[i]);
     }
 
     return out;
@@ -361,13 +361,13 @@ public class Cage {
 	 * Membaca dan mengisi kandang dari scanner
 	 * @param in scanner yang akan dibaca
 	 */
-  public void Read(Scanner in){
+  public void read(Scanner in){
     int s = in.nextInt();
-    SetNewCage(s);
+    setNewCage(s);
     for(int i=0; i<s; i++){
       int x = in.nextInt();
       int y = in.nextInt();
-      AddPosition(x, y);
+      addPosition(x, y);
     }
   }
 
