@@ -213,7 +213,7 @@ public class Cage {
 	 * @param in binatang yang ingin dimasukkan ke kandang
 	 */
   public void addAnimal(Animal in) {
-    if (!isFull() && ((in.GetFirstHabitat() == getHabitat()) || (in.GetSecondHabitat() == getHabitat()))){
+    if (!isFull() && ((in.getFirstHabitat() == getHabitat()) || (in.getSecondHabitat() == getHabitat()))){
       boolean valid = false;
 
       if (!searchAnimal(in.getRow(), in.getCol())){ // if there is no other animal in the target coordinate

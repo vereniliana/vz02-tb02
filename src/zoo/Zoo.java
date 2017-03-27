@@ -280,7 +280,7 @@ public class Zoo {
   /**
     * Melakukan tour pada kebun binatang
     */
-  public void Tour(){
+  public void tour(){
     boolean found = false;
     int xen = 0, yen = 0, xex = 0, yex = 0;
     Random rand = new Random();
@@ -585,7 +585,7 @@ public class Zoo {
     * Membaca kebun binatang dari input suatu scanner
     * @param in scanner input
     */
-  public void Read(Scanner in){
+  public void read(Scanner in){
     int r = in.nextInt();
     int c = in.nextInt();
 

@@ -59,7 +59,7 @@ public class Driver {
     System.out.println("1. Menampilkan peta Kebun Binatang");
     System.out.println("2. Menampilkan seluruh peta pada Kebun Binatang");
     System.out.println("3. Menampilkan total makanan yang dimakan seluruh hewan");
-    System.out.println("4. tour Kebun Binatang!");
+    System.out.println("4. Tour Kebun Binatang!");
     System.out.println("5. Real Time tour!");
     System.out.println("6. Quit");
     System.out.println("Pilih angka 1..6 :");
@@ -90,7 +90,7 @@ public class Driver {
           myZoo.tour();
           break;
         case 5:
-          myZoo.realTimetour();
+          myZoo.realTimeTour();
           break;
         case 6:
           System.out.print("Thank You For Visiting Our Zoo");
