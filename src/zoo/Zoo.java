@@ -93,7 +93,10 @@ public class Zoo {
     cage = new Cage[row*col];
     nCage = 0;
   }
-
+  /**
+    * Menambah kandang ke dalam kebun binatang
+    * @param in kandang yang ingin ditambahkan
+    */
   public void addCage(Cage in){
     boolean valid = true;
     char first_habitat = '?';
@@ -221,7 +224,11 @@ public class Zoo {
       }
     }
   }
-
+  /**
+    * Menampilkan kebun binatang
+    * @param r jumlah baris
+    * @param c jumlah kolom
+    */
   public void display(int r, int c){
     for(int i=0; i<row; i++){
       for(int j=0; j<col; j++){
@@ -264,8 +271,6 @@ public class Zoo {
       System.out.println();
     }
   }
-
-
   /**
     * Menampilkan keseluruhan kebun binatang
     */
@@ -418,7 +423,9 @@ public class Zoo {
         break;
     }
   }
-
+  /**
+    * Menjalankan tour secara real time pada kebun binatang
+    */
   public void realTimeTour(){
     boolean found = false;
     int xen = 0, yen = 0, xex = 0, yex = 0;
