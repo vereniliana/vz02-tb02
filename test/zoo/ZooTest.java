@@ -29,13 +29,4 @@ public class ZooTest {
     z.setNewZoo(15,16);
     assertTrue(z.getRow() == 15 && z.getCol() == 16);
   }
-  @Test
-  public void test_printConsumedFood() {
-    System.out.println("Test if printConsumedFood is correct");
-    
-    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    String expectedOutput = "";
-    z.printConsumedFood();
-    assertEquals(outContent.toString(), expectedOutput);
-  }
 }

@@ -146,30 +146,6 @@ public class AnimalTest {
   }
   
   @Test
-  public void test_displayAnimalData() {
-    ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(outContent));
-    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
-    A.displayAnimalData();
-     // Notice the \n for new line.
-    String expectedOutput  = "Species: ELEPHANT\n"+
-                             "Name: elephant1\n"+
-                              "Weight: 2000\n"+
-                              "Sex: MALE\n"+
-                              "HeartChamber: 4\n"+
-                              "Blood: h\n"+
-                              "VegRatio: 0.05\n"+
-                              "MeatRatio: 0\n"+
-                              "Id: E\n"+
-                              "RowPosition: 2\n"+
-                              "ColPosition: 2\n"+
-                              "Habitat 1: l\n"+
-                              "Habitat 2: l\n"+
-                              "Wild: false\n";
-    assertEquals(outContent.toString(), expectedOutput);
-  }
-  
-  @Test
   public void test_countConsumedVeggie() {
     System.out.println("Test if return correct consumed veggie ...");
     Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
@@ -210,15 +186,5 @@ public class AnimalTest {
     Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
     assertTrue(A.isOmnivore()==false);
   }
-  
-  /*
-  @Test
-  public void test_renderWithColor() {
-    System.out.println("Test if return correct animal id with color code  ...");
-    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
-    assertTrue(A.renderWithColor()==(Color.ANSI_YELLOW+A.render()+Color.ANSI_RESET));
-  }*/
-  
-  
 
 }

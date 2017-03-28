@@ -1,0 +1,226 @@
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: src
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 6
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    src.Driver
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+    src.animal
+    src.cage
+    src.zoo
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: src.animal
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 4
+
+    A: 0
+    I: 0.57
+    D: 0.43
+
+Abstract Classes:
+
+Concrete Classes:
+    src.animal.Animal
+    src.animal.Sex
+    src.animal.Species
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+    src.color
+
+Used By:
+    src
+    src.cage
+    src.zoo
+
+--------------------------------------------------
+- Package: src.cage
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 5
+
+    A: 0
+    I: 0.71
+    D: 0.29
+
+Abstract Classes:
+
+Concrete Classes:
+    src.cage.Cage
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+    src.animal
+    src.color
+
+Used By:
+    src
+    src.zoo
+
+--------------------------------------------------
+- Package: src.cell
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 2
+
+    A: 0
+    I: 0.67
+    D: 0.33
+
+Abstract Classes:
+
+Concrete Classes:
+    src.cell.Cell
+
+Depends Upon:
+    java.lang
+    src.color
+
+Used By:
+    src.zoo
+
+--------------------------------------------------
+- Package: src.color
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 4
+    Ce: 1
+
+    A: 0
+    I: 0.2
+    D: 0.8
+
+Abstract Classes:
+
+Concrete Classes:
+    src.color.Color
+
+Depends Upon:
+    java.lang
+
+Used By:
+    src.animal
+    src.cage
+    src.cell
+    src.zoo
+
+--------------------------------------------------
+- Package: src.zoo
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 7
+
+    A: 0
+    I: 0.88
+    D: 0.12
+
+Abstract Classes:
+
+Concrete Classes:
+    src.zoo.Zoo
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+    src.animal
+    src.cage
+    src.cell
+    src.color
+
+Used By:
+    src
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+java.io,0,0,4,0,0,0,1,1
+java.lang,0,0,6,0,0,0,1,1
+java.util,0,0,4,0,0,0,1,1
+src,1,0,0,6,0,1,0,1
+src.animal,3,0,3,4,0,0.57,0.43,1
+src.cage,1,0,2,5,0,0.71,0.29,1
+src.cell,1,0,1,2,0,0.67,0.33,1
+src.color,1,0,4,1,0,0.2,0.8,1
+src.zoo,1,0,1,7,0,0.88,0.12,1
