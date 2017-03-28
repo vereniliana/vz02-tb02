@@ -5,7 +5,7 @@
 
 package cell;
 
-import color.Color;
+import color.*;
 
 public class Cell {
   private char id;
@@ -19,10 +19,10 @@ public class Cell {
 
   /**
    * Consructor dengan parameter.
-   * @param idCell karakter id sel.
+   * @param pId karakter id sel.
    */
-  public Cell(char idCell) {
-    id = idCell;
+  public Cell(char pId) {
+    id = pId;
   }
 
   /**
