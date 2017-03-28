@@ -1,6 +1,6 @@
 COMPILE JAVA DAN PACKAGE ANTEK2NYA
 cd ke vz02-tb02/
-javac -cp  .:/usr/share/java/junit4.jar  "test/animal/AnimalTest.java" "test/cell/CellTest.java" "src/zoo/Zoo.java" "src/cell/Cell.java" "src/cage/Cage.java" "src/animal/Animal.java" "src/animal/Sex.java" "src/animal/Species.java" "src/color/Color.java" "src/Driver.java"
+javac -cp  .:/usr/share/java/junit4.jar "test/cage/CageTest.java" "test/zoo/ZooTest.java" "test/animal/AnimalTest.java" "test/cell/CellTest.java" "src/zoo/Zoo.java" "src/cell/Cell.java" "src/cage/Cage.java" "src/animal/Animal.java" "src/animal/Sex.java" "src/animal/Species.java" "src/color/Color.java" "src/Driver.java"
 
 RUN DRIVER KEBUN BINATANG
 cd ke vz02-tb02/
