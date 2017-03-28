@@ -3,7 +3,7 @@
   * Nama file : Sex.java
   */
 
-package animal;
+package src.animal;
 
 public enum Sex {
   MALE, FEMALE

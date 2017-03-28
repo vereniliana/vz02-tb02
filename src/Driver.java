@@ -2,14 +2,15 @@
   * @author NIM/Nama : 13515057 / Erick Wijaya
   * File     : Driver.java
   */
+package src;
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
-import cell.*;
-import cage.*;
-import animal.*;
-import zoo.*;
+import src.cell.Cell;
+import src.cage.Cage;
+import src.animal.Animal;
+import src.zoo.Zoo;
 
 public class Driver {
   /**
@@ -21,9 +22,9 @@ public class Driver {
     */
   public static void createZoo(){
     try{
-      Scanner inZoo = new Scanner(new File("zoo.txt"));
-      Scanner inCage = new Scanner(new File("cage.txt"));
-      Scanner inAnimal = new Scanner(new File("animal.txt"));
+      Scanner inZoo = new Scanner(new File("src/zoo.txt"));
+      Scanner inCage = new Scanner(new File("src/cage.txt"));
+      Scanner inAnimal = new Scanner(new File("src/animal.txt"));
       Scanner in = new Scanner(System.in);
       myZoo = new Zoo();
       // read Zoo from file

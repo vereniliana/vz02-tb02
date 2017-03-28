@@ -3,10 +3,10 @@
   * Nama file : Animal.java.
   */
 
-package animal;
+package src.animal;
 
 import java.util.*;
-import color.*;
+import src.color.Color;
 
 public class Animal {
   private Species species;

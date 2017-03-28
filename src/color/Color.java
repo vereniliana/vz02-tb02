@@ -3,7 +3,7 @@
   * Nama file : Color.java
   */
 
-package color;
+package src.color;
 
 public class Color {
   public static final String ANSI_RESET = "\u001B[0m";

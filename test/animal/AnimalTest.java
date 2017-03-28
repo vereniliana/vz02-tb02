@@ -1,11 +1,11 @@
-package test;
+package test.animal;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import animal.*;
+import src.animal.*;
 
 public class AnimalTest {
 

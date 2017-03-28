@@ -3,15 +3,15 @@
   * Nama File        : Zoo.java
   */
 
-package zoo;
+package src.zoo;
 
-import animal.Animal;
-import animal.Sex;
-import animal.Species;
-import cage.Cage;
-import cell.Cell;
-import color.Color;
 import java.util.*;
+import src.animal.Animal;
+import src.animal.Sex;
+import src.animal.Species;
+import src.cage.Cage;
+import src.cell.Cell;
+import src.color.Color;
 
 public class Zoo {
   private static final int DEFROW = 50;
@@ -118,7 +118,7 @@ public class Zoo {
         || (in.getCol(i) >= col)) {
       valid = false;
     } else {
-      first_habitat = cell[in.getRow(i)][in.getCol(i)].render();
+      firstHabitat = cell[in.getRow(i)][in.getCol(i)].render();
     }
 
     if (valid) {
@@ -133,7 +133,7 @@ public class Zoo {
         valid = false;
       } else {
         // check if cage does not take more than one habitat
-        valid = cell[in.getRow(i)][in.getCol(i)].render() == first_habitat;
+        valid = cell[in.getRow(i)][in.getCol(i)].render() == firstHabitat;
 
         // check if there's exist another cage
         int j = 0;

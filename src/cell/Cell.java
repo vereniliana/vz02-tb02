@@ -3,9 +3,9 @@
  * File : Cell.java
  */
 
-package cell;
+package src.cell;
 
-import color.*;
+import src.color.Color;
 
 public class Cell {
   private char id;
@@ -19,10 +19,10 @@ public class Cell {
 
   /**
    * Consructor dengan parameter.
-   * @param pId karakter id sel.
+   * @param parId karakter id sel.
    */
-  public Cell(char pId) {
-    id = pId;
+  public Cell(char parId) {
+    id = parId;
   }
 
   /**

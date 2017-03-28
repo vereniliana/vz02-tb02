@@ -1,10 +1,10 @@
-package test;
+package test.cell;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import cell.*;
+import src.cell.Cell;
 
 public class CellTest {
 

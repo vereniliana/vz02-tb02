@@ -3,7 +3,7 @@
   * Nama file : Sex.java
   */
 
-package animal;
+package src.animal;
 
 public enum Species {
 	NONE, ELEPHANT, GIRAFFE, LION, TIGER, ORANGUTAN, CHIMPANZEE, KOMODO, BEAR,
