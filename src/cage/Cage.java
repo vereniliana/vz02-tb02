@@ -4,11 +4,10 @@
 
 package src.cage;
 
+import java.util.*;
 import src.animal.Animal;
-import src.animal.Sex;
 import src.animal.Species;
 import src.color.Color;
-import java.util.*;
 
 public class Cage {
   private int size; // size of cage

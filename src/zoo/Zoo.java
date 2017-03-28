@@ -7,8 +7,6 @@ package src.zoo;
 
 import java.util.*;
 import src.animal.Animal;
-import src.animal.Sex;
-import src.animal.Species;
 import src.cage.Cage;
 import src.cell.Cell;
 import src.color.Color;
