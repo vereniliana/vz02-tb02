@@ -1,0 +1,19 @@
+COMPILE JAVA DAN PACKAGE ANTEK2NYA
+cd ke vz02-tb02/
+javac -cp  .:/usr/share/java/junit4.jar  "test/animal/AnimalTest.java" "test/cell/CellTest.java" "src/zoo/Zoo.java" "src/cell/Cell.java" "src/cage/Cage.java" "src/animal/Animal.java" "src/animal/Sex.java" "src/animal/Species.java" "src/color/Color.java" "src/Driver.java"
+
+RUN DRIVER KEBUN BINATANG
+cd ke vz02-tb02/
+java src.Driver
+
+JUNIT test/animal/AnimalTest.class
+cd ke vz02-tb02/
+ java -cp .:/usr/share/java/junit4.jar  org.junit.runner.JUnitCore test.animal.AnimalTest
+
+JDEPEND FOLDER SRC
+cd ke vz02-tb02
+java -cp /home/audry/Downloads/jdepend-2.9.1.jar jdepend.swingui.JDepend src
+
+CHECKSTYLE FOLDER SRC
+cd ke vz02-tb02
+java -jar /home/audry/Downloads/checkstyle-7.6.1-all.jar -c /google_checks.xml src
