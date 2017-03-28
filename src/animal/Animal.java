@@ -1,12 +1,12 @@
 /**
-  * @author NIM/Nama: 13515144 / William
-  * Nama file : Animal.java
+  * @author NIM/Nama: 13515144 / William.
+  * Nama file : Animal.java.
   */
 
 package animal;
 
-import color.*;
 import java.util.*;
+import color.*;
 
 public class Animal {
   private Species species;
@@ -25,7 +25,7 @@ public class Animal {
   private boolean wild;
 
   /**
-   * Konstruktor.
+   * Konstruktor.sudo
    */
   public Animal() {
     species = Species.NONE;
@@ -46,58 +46,58 @@ public class Animal {
 
   /**
    * Konstruktor dengan parameter.
-   * @param _species species Animal.
-   * @param _name nama Animal.
-   * @param _weight berat Animal.
-   * @param _sex jenis kelamin Animal (MALE/FEMALE).
-   * @param _hc jumlah ruang jantung.
-   * @param _blood jenis darah ('h'/'c').
-   * @param _veg rasio sayur.
-   * @param _meat rasio daging.
-   * @param _id karakter id Animal.
-   * @param _row posisi Animal (baris).
-   * @param _col posisi Animal (kolom).
-   * @param _habitat karakter yang merepresentasikan habitat.
-   * @param _wild liar/tidaknya Animal.
+   * @param pSpecies species Animal
+   * @param pName nama Animal
+   * @param pWeight berat Animal
+   * @param pSex jenis kelamin Animal (MALE/FEMALE)
+   * @param pHc jumlah ruang jantung
+   * @param pBlood jenis darah ('h'/'c')
+   * @param pVeg rasio sayur
+   * @param pMeat rasio daging
+   * @param pId karakter id Animal
+   * @param pRow posisi Animal (baris)
+   * @param pCol posisi Animal (kolom)
+   * @param pHabitat1 karakter yang merepresentasikan habitat
+   * @param pWild liar/tidaknya Animal
    */
-  public Animal(Species _species, String _name, double _weight, Sex _sex, int _hc, char _blood,
-                double _veg, double _meat, char _id, int _row, int _col, char _habitat_1, 
-                char _habitat_2, boolean _wild) {
-    species = _species;
-    name = _name;
-    weight = _weight;
-    sex = _sex;
-    heartChamber = _hc;
-    blood = _blood;
-    vegRatio = _veg;
-    meatRatio = _meat;
-    id = _id;
-    row = _row;
-    col =_col;
-    habitat1 = _habitat_1;
-    habitat2 = _habitat_2;
-    wild = _wild;
+  public Animal(Species pSpecies, String pName, double pWeight, Sex pSex, int pHc, char pBlood,
+                double pVeg, double pMeat, char pId, int pRow, int pCol, char pHabitat1, char pHabitat2, boolean pWild) {
+    species = pSpecies;
+    name = pName;
+    weight = pWeight;
+    sex = pSex;
+    heartChamber = pHc;
+    blood = pBlood;
+    vegRatio = pVeg;
+    meatRatio = pMeat;
+    id = pId;
+    row = pRow;
+    col = pCol;
+    habitat1 = pHabitat1;
+    habitat2 = pHabitat2;
+    wild = pWild;
   }
 
   /**
    * Melakukan duplikasi Animal.
-   * @return Animal yang diduplikasi.
+   * @return Animal yang diduplikasi
    */
   public Animal clone() {
     return new Animal(species, name, weight, sex, heartChamber, blood,
                       vegRatio, meatRatio, id, row, col, habitat1, habitat2, wild);
   }
-
+  
   /**
    * Mengembalikan species dari Animal.
-   * @return nama Animal.
+   * @return nama Animal
    */
   public Species getSpecies() {
     return species;
   }
+  
   /**
    * Mengembalikan nama dari Animal.
-   * @return nama Animal.
+   * @return nama Animal
    */
   public String getName() {
     return name;
@@ -105,7 +105,7 @@ public class Animal {
 
   /**
    * Mengembalikan berat dari Animal.
-   * @return berat Animal.
+   * @return berat Animal
    */
   public double getWeight() {
     return weight;
@@ -113,7 +113,7 @@ public class Animal {
 
   /**
    * Mengembalikan jenis kelamin dari Animal.
-   * @return jenis kelamin Animal.
+   * @return jenis kelamin Animal
    */
   public Sex getSex() {
     return sex;
@@ -121,7 +121,7 @@ public class Animal {
 
   /**
    * Mengembalikan ruang jantung dari Animal.
-   * @return ruang jantung Animal.
+   * @return ruang jantung Animal
    */
   public int getHeartChamber() {
     return heartChamber;
@@ -129,7 +129,7 @@ public class Animal {
 
   /**
    * Mengembalikan jenis darah (panas/dingin) dari Animal.
-   * @return jenis darah (panas/dingin)  Animal.
+   * @return jenis darah (panas/dingin)  Animal
    */
   public char getBlood() {
     return blood;
@@ -137,7 +137,7 @@ public class Animal {
 
   /**
    * Mengembalikan rasio konsumsi sayur dari Animal.
-   * @return rasio konsumsi sayur Animal.
+   * @return rasio konsumsi sayur Animal
    */
   public double getVegRatio() {
     return vegRatio;
@@ -145,7 +145,7 @@ public class Animal {
 
   /**
    * Mengembalikan rasio konsumsi daging dari Animal.
-   * @return rasio konsumsi daging Animal.
+   * @return rasio konsumsi daging Animal
    */
   public double getMeatRatio() {
     return meatRatio;
@@ -153,7 +153,7 @@ public class Animal {
 
   /**
    * Mengembalikan id dari Animal.
-   * @return id Animal.
+   * @return id Animal
    */
   public char getId() {
     return id;
@@ -161,7 +161,7 @@ public class Animal {
 
   /**
    * Mengembalikan posisi baris dari Animal.
-   * @return posisi baris Animal.
+   * @return posisi baris Animal
    */
   public int getRow() {
     return row;
@@ -169,144 +169,203 @@ public class Animal {
 
   /**
    * Mengembalikan posisi kolom dari Animal.
-   * @return posisi kolom Animal.
+   * @return posisi kolom Animal
    */
   public int getCol() {
     return col;
   }
-
+  
   /**
    * Mengembalikan habitat pertama dari Animal.
-   * @return id Animal.
+   * @return id Animal
    */
   public char getFirstHabitat() {
     return habitat1;
   }
-
+  
   /**
    * Mengembalikan habitat pertama dari Animal.
-   * @return id Animal.
+   * @return id Animal
    */
   public char getSecondHabitat() {
     return habitat2;
   }
-
+  
   /**
    * Memeriksa liar/tidaknya Animal.
-   * @return id Animal.
+   * @return id Animal
    */
   public boolean isWild() {
     return wild;
   }
-
+  
+  /**
+   * Mengubah spesies dari Animal.
+   * @param spesies Animal
+   */
+  public void setSpecies(Species sp) {
+    species = sp;
+  }
+  
   /**
    * Mengubah nama dari Animal.
-   * @param n nama Animal.
+   * @param nama Animal
    */
   public void setName(String n) {
     name = n;
   }
-
+  
   /**
    * Mengubah berat dari Animal.
-   * @param w berat Animal.
+   * @param berat Animal
    */
   public void setWeight(double w) {
     weight = w;
   }
-
+  
   /**
    * Mengubah jenis kelamin dari Animal.
-   * @param ns jenis kelamin Animal.
+   * @param jenis kelamin Animal
    */
   public void setSex(Sex ns) {
     sex = ns;
   }
-
+  
+  /**
+   * Mengubah jumlah ruang jantung dari Animal.
+   * @param jumlah ruang jantung Animal
+   */
+  public void setHeartChamber(int hc) {
+    heartChamber = hc;
+  }
+  
+  /**
+   * Mengubah temperatur darah dari Animal.
+   * @param temperatur darah('h'/'c') Animal
+   */
+  public void setBlood(char bl) {
+    blood = bl;
+  }
+  
+  /**
+   * Mengubah rasio konsumsi sayur Animal.
+   * @param rasio konsumsi sayur
+   */
+  public void setVegRatio(double vr) {
+    vegRatio = vr;
+  }
+  
+  /**
+   * Mengubah rasio konsumsi daging Animal.
+   * @param rasio konsumsi daging
+   */
+  public void setMeatRatio(double mr) {
+    meatRatio = mr;
+  }
+  
   /**
    * Mengubah posisi baris dari Animal.
-   * @param r posisi baris Animal.
+   * @param posisi baris Animal
    */
   public void setRow(int r) {
     row = r;
   }
-
+  
   /**
    * Mengubah posisi kolom dari Animal.
-   * @param c posisi kolom Animal.
+   * @param posisi kolom Animal
    */
   public void setCol(int c) {
     col = c;
   }
-
+  
+  /**
+   * Mengubah id dari Animal.
+   * @param id Animal
+   */
+  public void setId(char idChar) {
+    id = idChar; 
+  }
+  
+  /**
+   * Mengubah habitat (1) dari Animal.
+   * @param habitat Animal
+   */
+  public void setFirstHabitat(char hab1) {
+    habitat1 = hab1;
+  }
+  
+  /**
+   * Mengubah habitat (2) dari Animal.
+   * @param habitat Animal
+   */
+  public void setSecondHabitat(char hab2) {
+    habitat2 = hab2;
+  }
+  
   /**
    * Mengubah seluruh atribut Animal.
-   * @param _species species Animal.
-   * @param _name nama Animal.
-   * @param _weight berat Animal.
-   * @param _sex jenis kelamin Animal (MALE/FEMALE).
-   * @param _hc jumlah ruang jantung.
-   * @param _blood jenis darah ('h'/'c').
-   * @param _veg rasio sayur.
-   * @param _meat rasio daging.
-   * @param _id karakter id Animal.
-   * @param _row posisi Animal (baris).
-   * @param _col posisi Animal (kolom).
-   * @param _habitat_1 karakter yang merepresentasikan habitat.
-   * @param _habitat_2 karakter yang merepresentasikan habitat kedua (sama dengan habitat1 bila bukan amfibi).
-   * @param _wild liar/tidaknya Animal.
+   * @param pSpecies species Animal
+   * @param pName nama Animal
+   * @param pWeight berat Animal
+   * @param pSex jenis kelamin Animal (MALE/FEMALE)
+   * @param pHc jumlah ruang jantung
+   * @param pBlood jenis darah ('h'/'c')
+   * @param pVeg rasio sayur
+   * @param pMeat rasio daging
+   * @param pId karakter id Animal
+   * @param pRow posisi Animal (baris)
+   * @param pCol posisi Animal (kolom)
+   * @param pHabitat1 karakter yang merepresentasikan habitat
+   * @param pWild liar/tidaknya Animal
    */
-  public void setAll(Species _species, String _name, double _weight, Sex _sex,
-                      int _hc, char _blood, double _veg, double _meat, char _id,
-                      int _row, int _col, char _habitat_1, char _habitat_2, boolean _wild) {
-    species = _species;
-    name = _name;
-    weight = _weight;
-    sex = _sex;
-    heartChamber = _hc;
-    blood = _blood;
-    vegRatio = _veg;
-    meatRatio = _meat;
-    id = _id;
-    row = _row;
-    col = _col;
-    habitat1 = _habitat_1;
-    habitat2 = _habitat_2;
-    wild = _wild;
+  public void setAll(Species pSpecies, String pName, double pWeight, Sex pSex, int pHc, char pBlood,
+                double pVeg, double pMeat, char pId, int pRow, int pCol, char pHabitat1, char pHabitat2, boolean pWild) {
+    species = pSpecies;
+    name = pName;
+    weight = pWeight;
+    sex = pSex;
+    heartChamber = pHc;
+    blood = pBlood;
+    vegRatio = pVeg;
+    meatRatio = pMeat;
+    id = pId;
+    row = pRow;
+    col =pCol;
+    habitat1 = pHabitat1;
+    habitat2 = pHabitat2;
+    wild = pWild;
   }
-
+  
   /**
    * Menampilkan data atribut dari Animal ke layar.
    */
   public void displayAnimalData() {
     System.out.println("Species: "+species);
-    System.out.println("Name: " + name);
-    System.out.println("Weight: "+ weight);
-    System.out.println("Sex: "+ sex);
-    System.out.println("HeartChamber: " + heartChamber);
-    System.out.println("Blood: " + blood);
-    System.out.println("VegRatio: " + vegRatio);
-    System.out.println("MeatRatio: " + meatRatio);
-    System.out.println("Id: " + id);
-    System.out.println("RowPosition: "+ row);
-    System.out.println("ColPosition: "+ col);
-    System.out.println("Habitat 1: "+ habitat1);
-    System.out.println("Habitat 2: "+ habitat2);
-    if (isWild()) {
+    System.out.println("Name: "+name);
+    System.out.println("Weight: "+weight);
+    System.out.println("Sex: "+sex);
+    System.out.println("HeartChamber: "+heartChamber);
+    System.out.println("Blood: "+blood);
+    System.out.println("VegRatio: "+vegRatio);
+    System.out.println("MeatRatio: "+meatRatio);
+    System.out.println("Id: "+id);
+    System.out.println("RowPosition: "+row);
+    System.out.println("ColPosition: "+col);
+    System.out.println("Habitat 1: "+habitat1);
+    System.out.println("Habitat 2: "+habitat2);
+    if (isWild())
       System.out.println("Wild: true");
-    }
-    else{
+    else
       System.out.println("Wild: false");
-    }
   }
-  
+
   /**
    * Menampilkan interaksi dari Animal.
    */
   public void interact() {
-    if (species == Species.ELEPHANT){
+    if (species == Species.ELEPHANT)
       System.out.println("This elephant is trumpeting!!");
-    }
     else if (species == Species.GIRAFFE)
       System.out.println("This girrafe is eating high tree leaves");
     else if (species == Species.LION)
@@ -356,10 +415,10 @@ public class Animal {
     else
       System.out.println("ERROR: Nama spesies salah");
   }
-
+  
   /**
    * Mengembalikan jumlah daging yang dikonsumsi.
-   * @return jumlah daging yang dikonsumsi.
+   * @return jumlah daging yang dikonsumsi
    */
   public double countConsumedMeat() {
     return meatRatio*weight;
@@ -367,7 +426,7 @@ public class Animal {
 
   /**
    * Mengembalikan jumlah makanan tumbuhan yang dikonsumsi.
-   * @return jumlah makanan tumbuhan yang dikonsumsi.
+   * @return jumlah makanan tumbuhan yang dikonsumsi
    */
   public double countConsumedVeggie() {
     return vegRatio*weight;
@@ -375,56 +434,57 @@ public class Animal {
 
   /**
    * Mengembalikan karakter id Animal untuk nantinya ditampilkan.
-   * @return karakter id Animal.
+   * @return karakter id Animal
    */
   public char render() {
     return getId();
   }
+  
   /**
    * Mengembalikan true bila Animal herbivore, yaitu memiliki rasio sayur > 0 dan rasio daging = 0.
-   * @return true bila rasio sayur > 0 dan rasio daging = 0.
+   * @return true bila rasio sayur > 0 dan rasio daging = 0
    */
-  public boolean isHerbivore(){
+  public boolean isHerbivore() {
     return (vegRatio > 0) && (meatRatio == 0);
   }
-
+  
   /**
    * Mengembalikan true bila Animal carnivore, yaitu memiliki rasio sayur = 0 dan rasio daging > 0.
-   * @return true bila rasio sayur = 0 dan rasio daging > 0.
+   * @return true bila rasio sayur = 0 dan rasio daging > 0
    */
-  public boolean isCarnivore(){
+  public boolean isCarnivore() {
     return (vegRatio == 0) && (meatRatio > 0);
   }
-
+  
   /**
    * Mengembalikan true bila Animal omnivore, yaitu memiliki rasio sayur > 0 dan rasio daging > 0.
-   * @return true bila rasio sayur > 0 dan rasio daging > 0.
+   * @return true bila rasio sayur > 0 dan rasio daging > 0
    */
-  public boolean isOmnivore(){
+  public boolean isOmnivore() {
     return (vegRatio > 0) && (meatRatio > 0);
   }
 
   /**
    * Mengembalikan string berisi kode warna dan karakter dari Animal untuk ditampilkan.
-   * @return kode warna dan karakter Animal.
+   * @return kode warna dan karakter Animal
    */
   public String renderWithColor() {
     if ((habitat1 == 'L') && (habitat2 == habitat1))
-      return Color.ANSI_YELLOW + render() + Color.ANSI_RESET;
+      return Color.ANSI_YELLOW+render()+Color.ANSI_RESET;
     else if ((habitat1 == 'W') && (habitat2 == habitat1))
-      return Color.ANSI_CYAN + render() + Color.ANSI_RESET;
+      return Color.ANSI_CYAN+render()+Color.ANSI_RESET;
     else if ((habitat1 == 'A') && (habitat2 == habitat1))
-      return Color.ANSI_RED + render() + Color.ANSI_RESET;
+      return Color.ANSI_RED+render()+Color.ANSI_RESET;
     else // Amphibious
-      return Color.ANSI_GREEN + render() + Color.ANSI_RESET;
+      return Color.ANSI_GREEN+render()+Color.ANSI_RESET;
   }
-
+  
   /**
   * Mengembalikan objek Animal dari suatu input "Scanner".
-  * @param in scanner input.
-  * @return Animal yang diciptakan.
+  * @param in scanner input
+  * @return Animal yang diciptakan
   */
-  public void read(Scanner in){
+  public void read(Scanner in) {
     String s = in.next();
     String _name = in.next();
     double _weight = in.nextDouble();
