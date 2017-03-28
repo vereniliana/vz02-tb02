@@ -304,6 +304,14 @@ public class Animal {
   }
   
   /**
+   * Mengubah liar/tidaknya dari Animal.
+   * @param true jika liar, false jika tidak
+   */
+  public void setWild(boolean w) {
+    wild = w;
+  }
+  
+  /**
    * Mengubah seluruh atribut Animal.
    * @param pSpecies species Animal
    * @param pName nama Animal

@@ -81,14 +81,14 @@ public class AnimalTest {
 	
   @Test
   public void test_getFirstHabitat() {
-    System.out.println("Test if return correct animal name ...");
+    System.out.println("Test if return correct animal habitat(1) ...");
     Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
     assertTrue(A.getFirstHabitat()=='l');
   }
   
   @Test
   public void test_getSecondHabitat() {
-    System.out.println("Test if return correct animal name ...");
+    System.out.println("Test if return correct animal habitat(2) ...");
     Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
     assertTrue(A.getSecondHabitat()=='l');
   }
@@ -117,9 +117,11 @@ public class AnimalTest {
     A.setCol(8);
     A.setFirstHabitat('a');
     A.setSecondHabitat('a');
+    A.setWild(true);
     assertTrue((A.getSpecies()==Species.EAGLE) && (A.getName()=="eagle1") && (A.getWeight()==90) && (A.getSex()==Sex.FEMALE) &&
         (A.getHeartChamber()==3)&& (A.getBlood()=='h') && (A.getVegRatio()==0) && (A.getMeatRatio()==0.04) && 
-        (A.getId()=='E') && (A.getRow()==5) && (A.getCol()==8) && (A.getFirstHabitat()=='a') && (A.getSecondHabitat()=='a'));
+        (A.getId()=='E') && (A.getRow()==5) && (A.getCol()==8) && (A.getFirstHabitat()=='a') && (A.getSecondHabitat()=='a') &&
+        (A.isWild()==true));
   }
   
   @Test
@@ -130,6 +132,93 @@ public class AnimalTest {
     A.interact();
     String expectedOutput  = "This elephant is trumpeting!!\n"; // Notice the \n for new line.
     assertEquals(outContent.toString(), expectedOutput);
-}
+  }
+  
+  @Test
+  public void test_setAll() {
+    System.out.println("Test if method setAll is correct ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    A.setAll(Species.DOLPHIN,"dolphin1",80,Sex.FEMALE,4,'h',0,0.04,'D',3,4,'w','w',false);
+    assertTrue((A.getSpecies()==Species.DOLPHIN) && (A.getName()=="dolphin1") && (A.getWeight()==80) && (A.getSex()==Sex.FEMALE) &&
+        (A.getHeartChamber()==4)&& (A.getBlood()=='h') && (A.getVegRatio()==0) && (A.getMeatRatio()==0.04) && 
+        (A.getId()=='D') && (A.getRow()==3) && (A.getCol()==4) && (A.getFirstHabitat()=='w') && (A.getSecondHabitat()=='w') && 
+        (A.isWild()==false));
+  }
+  
+  @Test
+  public void test_displayAnimalData() {
+    ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outContent));
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    A.displayAnimalData();
+     // Notice the \n for new line.
+    String expectedOutput  = "Species: ELEPHANT\n"+
+                             "Name: elephant1\n"+
+                              "Weight: 2000\n"+
+                              "Sex: MALE\n"+
+                              "HeartChamber: 4\n"+
+                              "Blood: h\n"+
+                              "VegRatio: 0.05\n"+
+                              "MeatRatio: 0\n"+
+                              "Id: E\n"+
+                              "RowPosition: 2\n"+
+                              "ColPosition: 2\n"+
+                              "Habitat 1: l\n"+
+                              "Habitat 2: l\n"+
+                              "Wild: false\n";
+    assertEquals(outContent.toString(), expectedOutput);
+  }
+  
+  @Test
+  public void test_countConsumedVeggie() {
+    System.out.println("Test if return correct consumed veggie ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.countConsumedVeggie()==100);
+  }
+  
+  @Test
+  public void test_countConsumedMeat() {
+    System.out.println("Test if return correct consumed meat ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.countConsumedMeat()==0);
+  }
+  
+  @Test
+  public void test_render() {
+    System.out.println("Test if return correct animal id for render ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.render()=='E');
+  }
+  
+  @Test
+  public void test_isHerbivore() {
+    System.out.println("Test if return correct herbivore status  ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.isHerbivore()==true);
+  }
+  
+  @Test
+  public void test_isCarnivore() {
+    System.out.println("Test if return correct carnivore status  ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.isCarnivore()==false);
+  }
+  
+  @Test
+  public void test_isOmnivore() {
+    System.out.println("Test if return correct omnivore status  ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.isOmnivore()==false);
+  }
+  
+  /*
+  @Test
+  public void test_renderWithColor() {
+    System.out.println("Test if return correct animal id with color code  ...");
+    Animal A = new Animal(Species.ELEPHANT, "elephant1", 2000, Sex.MALE, 4, 'h', 0.05, 0, 'E', 2, 2, 'l', 'l', false);
+    assertTrue(A.renderWithColor()==(Color.ANSI_YELLOW+A.render()+Color.ANSI_RESET));
+  }*/
+  
+  
 
 }
